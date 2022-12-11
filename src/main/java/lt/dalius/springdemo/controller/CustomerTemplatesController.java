@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 @Controller
 // http://localhost:8080/customer
 @RequestMapping(path = "/customer")
@@ -42,5 +44,13 @@ public class CustomerTemplatesController {
         Customer customer = customerService.getCustomerByCustomerNumber(custId);
         model.addAttribute("key_customer", customer);
         return "/customer/customer_th";
+    }
+
+    // http://localhost:8080/customer/template/all
+    @GetMapping(path = "/template/all")
+    public String getCustomer(Model model){
+        List<Customer> customers = customerService.getAllCustomers();
+        model.addAttribute("listas", customers);
+        return "/customer/customers_th";
     }
 }

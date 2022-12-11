@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/customers/basic.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/customers/index.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/styles/customers/basic.css">
+    <link rel="stylesheet" href="/static/styles/customers/index.css">
+</head>
+
+<body>
+<table id="customerDataTable" class="table">
+    <tr>
+        <th class="th">#</th>
+        <th class="th">id</th>
+        <th class="th">Company</th>
+        <th class="th">First Name</th>
+        <th class="th">Last Name</th>
+        <th class="th">Phone</th>
+        <th class="th">City</th>
+        <th class="th">Country</th>
+        <th class="th">Credit Limit</th>
+    </tr>
+    <tr th:each="customer : ${listas}">
+        <td class="td" th:text="${customerStat.index+1}"></td>
+        <td class="td" th:text="${customer.customerNumber}"></td>
+        <td class="td" th:text="${customer.customerName}"></td>
+        <td class="td" th:text="${customer.contactFirstName}"></td>
+        <td class="td" th:text="${customer.contactLastName}"></td>
+        <td class="td" th:text="${customer.phone}"></td>
+        <td class="td" th:text="${customer.city}"></td>
+        <td class="td" th:text="${customer.country}"></td>
+        <td class="td" th:text="${customer.creditLimit}"></td>
+    </tr>
+</table>
+
+</body>
+</html>

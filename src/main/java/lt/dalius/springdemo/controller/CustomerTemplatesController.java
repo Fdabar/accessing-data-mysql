@@ -30,7 +30,17 @@ public class CustomerTemplatesController {
         model.addAttribute("company_name", customer.getCustomerName());
         model.addAttribute("contact_last_name", customer.getContactLastName());
         model.addAttribute("contact_first_name", customer.getContactFirstName());
+        model.addAttribute("city", customer.getCity());
         model.addAttribute("country", customer.getCountry());
+        model.addAttribute("creditLimit", customer.getCreditLimit());
         return "firstpage";
+    }
+
+    // http://localhost:8080/customer/template/112
+    @GetMapping(path = "/template/{custId}")
+    public String getCustomer(@PathVariable int custId, Model model){
+        Customer customer = customerService.getCustomerByCustomerNumber(custId);
+        model.addAttribute("key_customer", customer);
+        return "/customer/customer_th";
     }
 }

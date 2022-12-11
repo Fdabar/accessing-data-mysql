@@ -1,0 +1,18 @@
+body {
+  background-color: lightblue;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.label {
+  background-color: aquamarine;
+  border: 2px solid blue;
+  text-align: center;
+}
+
+.customer-data {
+  background-color: lightsalmon;
+  border: 2px solid blue;
+}

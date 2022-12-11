@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/styles/customer/basic.css}" rel="stylesheet"/>
+    <link th:href="@{/styles/customer/index.css}" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/styles/customer/basic.css"/>
+    <link rel="stylesheet" href="/static/styles/customer/index.css"/>
+</head>
+<body>
+<div class="customer" th:object="${key_customer}">
+    <div class="label"><p>Name: </p></div>
+    <div class="customer-data">
+        <p th:text="${key_customer.customerName}"> Some text here</p>
+    </div>
+    <div class="label"><p>First Name: </p></div>
+    <div class="customer-data">
+        <p th:text="${key_customer.contactFirstName}"> Some text here</p>
+    </div>
+    <div class="label"><p>Last Name: </p></div>
+    <div class="customer-data">
+        <p th:text="${key_customer.contactLastName}"> Some text here</p>
+    </div>
+    <div class="label"><p>City: </p></div>
+    <div class="customer-data">
+        <p th:text="${key_customer.city}"> Some text here</p>
+    </div>
+    <div class="label"><p>Country: </p></div>
+    <div class="customer-data">
+        <p th:text="${key_customer.country}"> Some text here</p>
+    </div>
+    <div class="label"><p>Credit Limit: </p></div>
+    <div class="customer-data">
+        <p th:text="${key_customer.creditLimit}"> Some text here</p>
+    </div>
+</div>
+</body>
+</html>
